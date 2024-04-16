@@ -1,7 +1,14 @@
 import { useLocation, Link } from 'react-router-dom';
 import { useState } from 'react';
+import { useDispatch,useSelector } from 'react-redux';
+import { setSidebar } from '../../redux/actions';
+
 
 export default function Sidebar() {
+
+  const dispatch = useDispatch();
+  const sidebar = useSelector(state => state.sidebar);
+  const navbar = useSelector(state => state.navbar);
   const location = useLocation();
   const [openIndex, setOpenIndex] = useState(null);
   const [openSubIndex, setOpenSubIndex] = useState(null);
@@ -26,9 +33,10 @@ export default function Sidebar() {
     setOpenSubIndex(openSubIndex === subIndex ? null : subIndex);
   };
 
-  
   return (
-    <div className='w-[240px] h-screen bg-white border-l pt-7 px-4 '>
+    <div className='z-40 w-full'>
+    <div className={`z-30 transition-all duration-700 fixed w-[240px] h-screen bg-white border-l pt-7 px-4 ${navbar ? (sidebar ? 'right-0' : 'right-[-15rem]') : 'right-0'}`}>
+
       <img src="/svg/dubz-icon.svg" alt="" className="mb-7 w-[81px] h-[61px] mx-auto" />
 
       <ul className="grid gap-2">
@@ -107,6 +115,8 @@ export default function Sidebar() {
       ))}
 
       </ul>
+    </div>
+    <div className={`${navbar ? (sidebar ? 'block' : 'hidden') : 'hidden'} z-10 h-screen w-full bg-[#00000077] fixed left-0`} onClick={()=>{dispatch(setSidebar(false))}}></div>
     </div>
   );
 }
