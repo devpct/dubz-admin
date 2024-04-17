@@ -45,20 +45,24 @@ export default function Navbar() {
     return (
         <>
             <div className="z-20 sticky top-0 w-full h-[56px] bg-white shadow-[0_2px_20px_-10px_rgba(0,0,0,0.3)] xl:hidden">
-                <button onClick={toggleMenu} className='my-5 mr-5'>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <button onClick={toggleMenu} className='mr-5'>
+
                         {isMenuOpen ? (
                             <>
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" stroke="#455A64" />
+                            <svg className="h-8 w-8 mt-3" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke="#455A64" d="M18 6 6 18"></path>
+                            <path stroke="#455A64" d="m6 6 12 12"></path>
+                            </svg>
                             </>
                         ) : (
                             <>
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 my-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path d="M1 6.99902H19" stroke="#455A64" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
                                 <path d="M1 1.20605H19" stroke="#455A64" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
                                 <path d="M1 12.792H19" stroke="#455A64" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+                                </svg>
                             </>
                         )}
-                    </svg>
                 </button>
             </div>
         </>
