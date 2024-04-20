@@ -30,15 +30,25 @@ export default function TransactionsModal({isTransactionsModalOpen, toggleTransa
       transactionType: 'نوع تراکنش',
   });
 
-  // pagination
-  const [currentPage, setCurrentPage] = useState(1);
-  const perPage = 10;
+    // pagination
+    const [currentPage, setCurrentPage] = useState(1);
+    const perPage = 10;
 
-  const indexOfLastItem = currentPage * perPage;
-  const indexOfFirstItem = indexOfLastItem - perPage;
-  const currentData = data.slice(indexOfFirstItem, indexOfLastItem);
+    // search
+    const [searchTerm, setSearchTerm] = useState('');
 
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+    const filteredData = data.filter((item) =>
+        Object.values(item).some((value) =>
+            value.toString().toLowerCase().includes(searchTerm.toLowerCase())
+        )
+    );
+
+    const indexOfLastItem = currentPage * perPage;
+    const indexOfFirstItem = indexOfLastItem - perPage;
+    const currentData = filteredData.slice(indexOfFirstItem, indexOfLastItem);
+
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
 
   return (
     <>
@@ -66,10 +76,11 @@ export default function TransactionsModal({isTransactionsModalOpen, toggleTransa
             <button className='w-full mt-4 lg:m-0 lg:w-[124px] h-[40px] bg-[#CB9044] text-[14px] text-white rounded-[8px]'>پرینت گزارش</button>
             </div>
             <div className="mt-5">
-              <Table toggleTransactionsModal={toggleTransactionsModal} title='جدول تراکنش ها' columnNames={columnNames} currentData={currentData} toggleDetailedReportModal={toggleDetailedReportModal}/>
+              <Table toggleTransactionsModal={toggleTransactionsModal} title='جدول تراکنش ها' columnNames={columnNames} currentData={currentData} toggleDetailedReportModal={toggleDetailedReportModal}                         searchTerm={searchTerm}
+                        setSearchTerm={setSearchTerm}/>
             </div>
             <div className="mt-5">
-              <Paginations perPage={perPage} total={data.length} paginate={paginate} />
+              <Paginations perPage={perPage} total={filteredData.length} paginate={paginate} />
             </div>
             </div>
             </div>
