@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const DropdownMenu = ({ items,label,setFormState,name,title }) => {
+const DropdownMenu = ({ items,label,setFormState,name,title, width = true }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -30,7 +30,7 @@ const DropdownMenu = ({ items,label,setFormState,name,title }) => {
   }, [isOpen]);
 
   return (
-    <div className='lg:w-[220px] w-full h-[40px]'>
+    <div className={`${width ? 'lg:w-[156px]' : 'lg:w-[220px]'} w-full h-[40px]`}>
     <p className='text-[#232F43]'>{label}</p>
     <div className="relative">
       <div className="w-full h-[40px] bg-white flex justify-between items-center overflow-hidden border-[#E8E6F9] border rounded-[8px] ">

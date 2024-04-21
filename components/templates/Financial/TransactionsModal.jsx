@@ -69,7 +69,7 @@ export default function TransactionsModal({isTransactionsModalOpen, toggleTransa
             <div className="mt-5 w-full lg:px-8 px-4">
             <div className='flex  w-full items-center  bg-white border shadow-lg border-[#E0DEF7] rounded-[8px] lg:px-3 px-4 lg:py-2 py-4 flex-col lg:flex-row'>
             <div className="flex gap-x-4 items-center gap-y-2 lg:flex-row flex-col w-full">
-                <DropdownMenu title='transactionType' setFormState={setFormState} name={formState.transactionType} items={['تست یک','تست دو','تست سه']}/>
+                <DropdownMenu title='transactionType' setFormState={setFormState} name={formState.transactionType} items={['تست یک','تست دو','تست سه']} width={false}/>
                 <DatePicker label='از تاریخ' />
                 <DatePicker label='تا تاریخ' />
             </div>

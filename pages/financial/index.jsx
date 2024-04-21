@@ -46,7 +46,7 @@ export default function Index() {
 
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
-    // Modal
+    // modal
     const [isInventoryModalOpen, setIsInventoryModalOpen] = useState(false);
     const [isTransactionsModalOpen, setIsTransactionsModalOpen] = useState(false);
     const [isDetailedReportModalOpen, setIsDetailedReportModalOpen] = useState(false);
