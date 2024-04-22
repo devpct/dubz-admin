@@ -36,7 +36,7 @@ export default function Sidebar() {
   
   return (
     <div className='z-40 w-full'>
-    <div className={`z-30 transition-all duration-700 fixed xl:block w-[240px] h-screen bg-white border-l pt-7 px-4 ${navbar ? (sidebar ? 'right-0' : 'right-[-15rem]') : 'right-0'}`}>
+    <div className={`z-30 transition-all duration-700 fixed xl:block w-[240px] h-screen bg-white border-l pt-7 px-4 ${navbar ? (sidebar ? 'right-0' : 'right-[-15rem]') : sidebar ? 'right-0' : 'right-[-15rem]'}`}>
 
       <img src="/svg/dubz-icon.svg" alt="" className="mb-7 w-[81px] h-[61px] mx-auto" />
 

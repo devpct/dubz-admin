@@ -24,8 +24,8 @@ export default function Table({ columnNames, currentData, toggleInventoryModal, 
         <div className="">
           <div className="inline-block w-full align-middle">
             <div className={`overflow-x-auto  ${filteredData.length !== 0 && 'border bg-white'} border-[#E0DEF7] rounded-[12px]`}>
-              <div className="flex m-8 justify-between items-center gap-5">
-                <h3 className="text-[18px] font-bold">{title}</h3>
+              <div className="flex m-8 justify-between items-center gap-5 sm:static relative">
+                <h3 className="text-[18px] font-bold sm:static absolute">{title}</h3>
                 {isSearch && <Search onSearch={handleSearch} searchTerm={searchTerm} />}
               </div>
 
