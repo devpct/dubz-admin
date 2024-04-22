@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import Search from '../../components/modules/Search';
 
-export default function Table({ columnNames, currentData, toggleInventoryModal, toggleTransactionsModal, title, isSearch = true, toggleDetailedReportModal, searchTerm, setSearchTerm }) {
+export default function Table({ columnNames, currentData, toggleInventoryModal, toggleTransactionsModal, title, isSearch = true, toggleDetailedReportModal, searchTerm, setSearchTerm, toggleComplaintsModal }) {
     
   const [filteredData, setFilteredData] = useState(currentData);
 
   useEffect(() => {
-    const filtered = currentData.filter((item) =>
+      const filtered = currentData.filter((item) =>
       Object.values(item).some((value) =>
-        value.toString().toLowerCase().includes(searchTerm.toLowerCase())
+      value.toString().toLowerCase().includes(searchTerm.toLowerCase())
       )
-    );
-    setFilteredData(filtered);
+      );
+      setFilteredData(filtered);
   }, [currentData, searchTerm]);
 
   const handleSearch = (text) => {
@@ -23,7 +23,7 @@ export default function Table({ columnNames, currentData, toggleInventoryModal, 
       <div className="flex flex-col" dir="rtl">
         <div className="">
           <div className="inline-block w-full align-middle">
-            <div className="overflow-x-auto bg-white border border-[#E0DEF7] rounded-[12px]">
+            <div className={`overflow-x-auto  ${filteredData.length !== 0 && 'border bg-white'} border-[#E0DEF7] rounded-[12px]`}>
               <div className="flex m-8 justify-between items-center gap-5">
                 <h3 className="text-[18px] font-bold">{title}</h3>
                 {isSearch && <Search onSearch={handleSearch} searchTerm={searchTerm} />}
@@ -54,7 +54,7 @@ export default function Table({ columnNames, currentData, toggleInventoryModal, 
                   </div>
                   :
                   filteredData.map((data, index) => (
-                    <tr key={data.id} className={`text-[#232F43] ${index % 2 === 0 ? "bg-white" : "bg-[#F7F8FA]"}`}>
+                    <tr key={data.id} className={`text-[#232F43] ${index % 2 === 1 ? "bg-white" : "bg-[#F7F8FA]"}`}>
                       {title === 'مشاورها' ? (
                         <>
                           <td className="px-4 py-4 text-[14px] font-medium whitespace-nowrap">
@@ -97,6 +97,24 @@ export default function Table({ columnNames, currentData, toggleInventoryModal, 
                             <td className="px-4 py-4 text-[15px] flex gap-5">
                             </td>
                           )}
+                        </>
+                      ) : title === 'لیست شکایت ها' ? (
+                        <>
+                        <td className="px-4 py-4 text-[14px] font-medium whitespace-nowrap">
+                            <div className="inline-flex items-center gap-x-3">
+                              <h2 className="font-medium text-gray-800">{data.complaintNumber}</h2>
+                            </div>
+                          </td>
+                          <td className="px-4 py-4 text-[15px] whitespace-nowrap">{data.name}</td>
+                          <td className="px-4 py-4 text-[15px] whitespace-nowrap flex gap-4 items-center">{data.date}</td>
+                          <td className="px-4 py-4 text-[15px] whitespace-nowrap">{data.phoneNumber}</td>
+                          <td className="px-4 py-4 text-[15px] whitespace-nowrap">{data.subject}</td>
+                          <td className="px-4 py-4 text-[15px]" style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', maxWidth: '200px', cursor: 'pointer' }} onClick={() => alert(data.complaintTitle)}>
+                            {data.complaintTitle}
+                          </td>
+                          <td className="px-4 py-4 text-[15px]">
+                            <button className='w-[147px] h-[36px] text-[#26397F] text-[14px] border border-[#26397F] rounded-[8px] hover:bg-[#26397F] hover:text-white transition-all' onClick={() => toggleComplaintsModal(data)}>مشاهده جزییات</button>
+                          </td>
                         </>
                       ) : null}
                     </tr>

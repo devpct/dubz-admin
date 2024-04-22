@@ -7,7 +7,7 @@ export default function ReportModal({isReportModalOpen, report, toggleReportModa
         <div className="w-full h-screen fixed top-0 left-0 z-50 flex items-center justify-center">
         <div className="blur-background" onClick={toggleReportModal}></div>
         <div className="modal-container">
-            <div className="modal-content sm:w-[500px] w-[93%] h-[241px] rounded-[16px] sm:p-8 p-5 transform -translate-x-1/2 sm:-translate-y-[100%] -translate-y-[80%] relative">
+            <div className="modal-content sm:w-[500px] w-[93%] h-fit rounded-[16px] sm:p-8 p-5 transform -translate-x-1/2 sm:-translate-y-[100%] -translate-y-[80%] relative">
             <div className='absolute w-[78px] h-[78px] bg-[#FF8C4F] border-[2px] border-white rounded-full shadow-lg top-[-35px] grid
             sm:left-[42%] left-[40%]'>
 

@@ -12,16 +12,16 @@ import ProfileDetailsModal from '../../components/templates/Consultants/ProfileD
 export default function index() {
 
     const consultants = [
-      {id:1, name: 'نرگس یوسفی', image: '/images/ellipse.png', phoneNumber: '۰۹۳۹۰۰۹۳۴۹۴', code: '۳۴۵۶۷', region: 'منطقه ۱', stock: '۲۰۰،۰۰۰', fileCount: '۲۰۰'},
-      {id:2, name: 'محمد عبدالله زاده', image: '/images/ellipse.png', phoneNumber: '۰۹۳۹۰۰۹۳۴۹۴', code: '۳۴۵۶۷', region: 'منطقه ۱', stock: '۲۰۰،۰۰۰', fileCount: '۲۰۰'},
-      {id:3, name: 'نرگس یوسفی', image: '/images/ellipse.png', phoneNumber: '۰۹۳۹۰۰۹۳۴۹۴', code: '۳۴۵۶۷', region: 'منطقه ۱', stock: '۲۰۰،۰۰۰', fileCount: '۲۰۰'},
-      {id:4, name: 'نرگس یوسفی', image: '/images/ellipse.png', phoneNumber: '۰۹۳۹۰۰۹۳۴۹۴', code: '۳۴۵۶۷', region: 'منطقه ۱', stock: '۲۰۰،۰۰۰', fileCount: '۲۰۰'},
-      {id:5, name: 'نرگس یوسفی', image: '/images/ellipse.png', phoneNumber: '۰۹۳۹۰۰۹۳۴۹۴', code: '۳۴۵۶۷', region: 'منطقه ۱', stock: '۲۰۰،۰۰۰', fileCount: '۲۰۰'},
-      {id:6, name: 'نرگس یوسفی', image: '/images/ellipse.png', phoneNumber: '۰۹۳۹۰۰۹۳۴۹۴', code: '۳۴۵۶۷', region: 'منطقه ۱', stock: '۲۰۰،۰۰۰', fileCount: '۲۰۰'},
-      {id:7, name: 'نرگس یوسفی', image: '/images/ellipse.png', phoneNumber: '۰۹۳۹۰۰۹۳۴۹۴', code: '۳۴۵۶۷', region: 'منطقه ۱', stock: '۲۰۰،۰۰۰', fileCount: '۲۰۰'},
-      {id:8, name: 'نرگس یوسفی', image: '/images/ellipse.png', phoneNumber: '۰۹۳۹۰۰۹۳۴۹۴', code: '۳۴۵۶۷', region: 'منطقه ۱', stock: '۲۰۰،۰۰۰', fileCount: '۲۰۰'},
-      {id:9, name: 'نرگس یوسفی', image: '/images/ellipse.png', phoneNumber: '۰۹۳۹۰۰۹۳۴۹۴', code: '۳۴۵۶۷', region: 'منطقه ۱', stock: '۲۰۰،۰۰۰', fileCount: '۲۰۰'},
-      {id:10, name: 'نرگس یوسفی', image: '/images/ellipse.png', phoneNumber: '۰۹۳۹۰۰۹۳۴۹۴', code: '۳۴۵۶۷', region: 'منطقه ۱', stock: '۲۰۰،۰۰۰', fileCount: '۲۰۰'},
+      {id:1, name: 'نرگس یوسفی', image: '/images/ellipse.png', phoneNumber: '۰۹۳۹۰۰۹۳۴۹۴', code: '۳۴۵۶۷',nationalCode: '۲۳۴۵۵۶۷۸۹۰', region: 'منطقه ۱', OfficeName: 'منطقه ۱', stock: '۲۰۰،۰۰۰', fileCount: '۲۰۰', address: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است'},
+      {id:2, name: 'محمد عبدالله زاده', image: '/images/ellipse.png', phoneNumber: '۰۹۳۹۰۰۹۳۴۹۴', code: '۳۴۵۶۷',nationalCode: '۲۳۴۵۵۶۷۸۹۰', region: 'منطقه ۱', OfficeName: 'منطقه ۱', stock: '۲۰۰،۰۰۰', fileCount: '۲۰۰', address: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است'},
+      {id:3, name: 'نرگس یوسفی', image: '/images/ellipse.png', phoneNumber: '۰۹۳۹۰۰۹۳۴۹۴', code: '۳۴۵۶۷', nationalCode: '۲۳۴۵۵۶۷۸۹۰', region: 'منطقه ۱', OfficeName: 'منطقه ۱', stock: '۲۰۰،۰۰۰', fileCount: '۲۰۰', address: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است'},
+      {id:4, name: 'نرگس یوسفی', image: '/images/ellipse.png', phoneNumber: '۰۹۳۹۰۰۹۳۴۹۴', code: '۳۴۵۶۷', nationalCode: '۲۳۴۵۵۶۷۸۹۰', region: 'منطقه ۱', OfficeName: 'منطقه ۱', stock: '۲۰۰،۰۰۰', fileCount: '۲۰۰', address: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است'},
+      {id:5, name: 'نرگس یوسفی', image: '/images/ellipse.png', phoneNumber: '۰۹۳۹۰۰۹۳۴۹۴', code: '۳۴۵۶۷', nationalCode: '۲۳۴۵۵۶۷۸۹۰', region: 'منطقه ۱', OfficeName: 'منطقه ۱', stock: '۲۰۰،۰۰۰', fileCount: '۲۰۰', address: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است'},
+      {id:6, name: 'نرگس یوسفی', image: '/images/ellipse.png', phoneNumber: '۰۹۳۹۰۰۹۳۴۹۴', code: '۳۴۵۶۷', nationalCode: '۲۳۴۵۵۶۷۸۹۰', region: 'منطقه ۱', OfficeName: 'منطقه ۱', stock: '۲۰۰،۰۰۰', fileCount: '۲۰۰', address: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است'},
+      {id:7, name: 'نرگس یوسفی', image: '/images/ellipse.png', phoneNumber: '۰۹۳۹۰۰۹۳۴۹۴', code: '۳۴۵۶۷', nationalCode: '۲۳۴۵۵۶۷۸۹۰', region: 'منطقه ۱', OfficeName: 'منطقه ۱', stock: '۲۰۰،۰۰۰', fileCount: '۲۰۰', address: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است'},
+      {id:8, name: 'نرگس یوسفی', image: '/images/ellipse.png', phoneNumber: '۰۹۳۹۰۰۹۳۴۹۴', code: '۳۴۵۶۷', nationalCode: '۲۳۴۵۵۶۷۸۹۰', region: 'منطقه ۱', OfficeName: 'منطقه ۱', stock: '۲۰۰،۰۰۰', fileCount: '۲۰۰', address: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است'},
+      {id:9, name: 'نرگس یوسفی', image: '/images/ellipse.png', phoneNumber: '۰۹۳۹۰۰۹۳۴۹۴', code: '۳۴۵۶۷', nationalCode: '۲۳۴۵۵۶۷۸۹۰', region: 'منطقه ۱', OfficeName: 'منطقه ۱', stock: '۲۰۰،۰۰۰', fileCount: '۲۰۰', address: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است'},
+      {id:10, name: 'نرگس یوسفی', image: '/images/ellipse.png', phoneNumber: '۰۹۳۹۰۰۹۳۴۹۴', code: '۳۴۵۶۷', nationalCode: '۲۳۴۵۵۶۷۸۹۰', region: 'منطقه ۱', OfficeName: 'منطقه ۱', stock: '۲۰۰،۰۰۰', fileCount: '۲۰۰', address: 'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است'},
     ]
 
         // pagination
@@ -52,16 +52,16 @@ export default function index() {
         const [isReportModalOpen, setIsReportModalOpen] = useState(false);
         const [report, setReport] = useState('');
         const [isProfileDetailsModalOpen, setIsProfileDetailsModalOpen] = useState(false);
-        const [consultantsData, setConsultantsData] = useState({});
+        const [consultantsData, setConsultantsData] = useState();
 
         const toggleReportModal = (name) => {
             setIsReportModalOpen(!isReportModalOpen);
             setReport(name);
         };
 
-        const toggleProfileDetailsModal = (name, image, phoneNumber, code, region, stock, fileCount) => {
+        const toggleProfileDetailsModal = (data) => {
           setIsProfileDetailsModalOpen(!isProfileDetailsModalOpen);
-          setConsultantsData({name, image, phoneNumber, code, region, stock, fileCount});
+          setConsultantsData(data);
       };
 
   return (
@@ -84,7 +84,7 @@ export default function index() {
         </div>
       :
       currentData.map(consultant=>(
-        <Card key={consultant.id} name={consultant.name} image={consultant.image} phoneNumber={consultant.phoneNumber} code={consultant.code} region={consultant.region} stock={consultant.stock} fileCount={consultant.fileCount} toggleReportModal={toggleReportModal}
+        <Card key={consultant.id} data={consultant} toggleReportModal={toggleReportModal}
         toggleProfileDetailsModal={toggleProfileDetailsModal}/>
       ))
     }

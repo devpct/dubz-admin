@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const DropdownMenu = ({ items,label,setFormState,name,title, width = true }) => {
+const DropdownMenu = ({ items,label,setFormState,name,title, width = true, color = false, widthFull = false }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -30,13 +30,13 @@ const DropdownMenu = ({ items,label,setFormState,name,title, width = true }) => 
   }, [isOpen]);
 
   return (
-    <div className={`${width ? 'lg:w-[156px]' : 'lg:w-[220px]'} w-full h-[40px]`}>
+    <div className={`${widthFull ? 'w-full' : width ? 'lg:w-[156px]' : 'lg:w-[220px]'} w-full h-[40px]`}>
     <p className='text-[#232F43]'>{label}</p>
     <div className="relative">
-      <div className="w-full h-[40px] bg-white flex justify-between items-center overflow-hidden border-[#E8E6F9] border rounded-[8px] ">
+      <div className={`w-full h-[40px] ${color ? 'bg-[#F7F7FA]' :  'bg-white'} flex justify-between items-center overflow-hidden border-[#E8E6F9] border rounded-[8px]`}>
         <button
           onClick={toggleMenu}
-          className={`w-full text-right px-4 py-2 text-[14px] text-[#232F43]`}
+          className={`w-full text-right px-4 py-2 sm:text-[14px] text-[12px] ${color ? 'text-[#434C5D]' : 'text-[#232F43]'}`}
         >
           {name}
         </button>
@@ -62,7 +62,7 @@ const DropdownMenu = ({ items,label,setFormState,name,title, width = true }) => 
       </div>
 
       {isOpen && (
-        <div className="absolute z-10 mt-2 w-full border-[#E8E6F9] border rounded-[8px] bg-white shadow-lg" role="menu">
+        <div className={`absolute z-10 mt-2 w-full border-[#E8E6F9] border rounded-[8px] ${color ? 'bg-[#F7F7FA]' :  'bg-white'} shadow-lg`} role="menu">
           <div className="p-2 cursor-pointer">
             {items.map((item, index) => (
               <a
