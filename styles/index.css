@@ -179,6 +179,6 @@ body {
     top: 18%;
   }
 
-  .css-g2z002-MuiSvgIcon-root-MuiPaginationItem-icon {
+ .MuiPaginationItem-previousNext {
     transform: rotatey(180deg);
   }
