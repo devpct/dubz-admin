@@ -17,7 +17,7 @@ export default function PaginationComponent({ perPage, total, currentPage, pagin
   return (
     <div className="flex justify-center w-full ">
       <Pagination 
-        dir="ltr"
+        dir="rtl"
         count={pageNumbers.length}
         page={currentPage}
         onChange={(event, page) => paginate(page)}
